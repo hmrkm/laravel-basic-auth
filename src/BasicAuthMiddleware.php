@@ -4,7 +4,6 @@ namespace Meisterguild\LaravelBasicAuth;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class BasicAuthMiddleware
 {
