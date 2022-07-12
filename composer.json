@@ -1,0 +1,26 @@
+{
+    "name": "meisterguild/laravel-basic-auth",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Meisterguild\\LaravelBasicAuth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hiroki Murakami",
+            "email": "h.murakami@m-gild.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^9.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Meisterguild\\LaravelBasicAuth\\BasicAuthServiceProvider"
+            ]
+        }
+    }
+}
