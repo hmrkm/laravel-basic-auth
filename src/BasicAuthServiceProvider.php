@@ -13,6 +13,7 @@ class BasicAuthServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/basicauth.php', 'envbasicauth');
     }
 
     /**
@@ -22,17 +23,7 @@ class BasicAuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $source = realpath($raw = __DIR__ . '/../config/basicauth.php') ?: $raw;
-
-        $this->publishes([$source => config_path('envbasicauth.php')]);
-
-        $this->mergeConfigFrom($source, 'envbasicauth');
-    }
-
-    public function provides(): array
-    {
-        return [
-            'envbasicauth',
-        ];
+        // vendor:publish コマンドでconfigディレクトリに追加される
+        $this->publishes([__DIR__ . '/../config/basicauth.php' => config_path('envbasicauth.php')]);
     }
 }
